@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Lotto-Demo</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/winning-numbers.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo-container">
+        <button class="box-menu-btn" type="button" aria-label="Toggle Sidebar" onclick="onToggleSidebar()">
+          <img src="images/icons/bx-menu.svg" class="box-menu-icon" alt="Toggle Sidebar" />
+        </button>
+        <div class="box-menu-text">
+          <span>2D-Lotto</span>
+        </div>
+      </div>
+      <nav class="main-header">
+        <ul class="nav-item-header">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" onclick="toggleUserDropdown(event)">
+              <i class="nav-icon superadmin-icon">
+                <img src="images/icons/user-icon.png" class="user-icon" alt="User Icon" />
+              </i>
+              Batangas
+            </a>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <div class="dropdown-divider"></div>
+              <a href="change-password.html" class="dropdown-item">
+                Change Password
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="logout.html" class="dropdown-item">
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="wrapper">
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar-container">
+
+      <aside class="main-asidebar">
+        <nav class="main-sidebar">
+          <ul class="nav-item-sidebar" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-header">PLAYER</li>
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon dashboard">
+                  <img src="images/icons/dashboard-icon.png" alt="dashboard-icon" class="icon-img" />
+                </i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="live-draw.html" class="nav-link">
+                <i class="nav-icon events">
+                  <img src="images/icons/event-icon.png" alt="event-icon" class="icon-img" />
+                </i>
+                <p>Live Draw</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="betting-station.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Betting-Station</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="winning-numbers.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Winning Numbers</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <i class="nav-icon wallet">
+                  <img src="images/icons/wallet-icon.png" alt="wallet-icon" class="icon-img" />
+                </i>
+                <p class="text">Wallet-Logs</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="event.html" class="nav-link">
+                <i class="nav-icon events">
+                  <img src="images/icons/history.png" alt="History" class="icon-img" />
+                </i>
+                <p>History</p>
+              </a>
+            </li>
+
+
+
+            <li class="nav-header">Settings</li>
+            <li class="nav-item">
+              <a href="change-password.html" class="nav-link">
+                <i class="nav-icon changekey">
+                  <img src="images/icons/key-icon.png" alt="key-icon" class="icon-img" />
+                </i>
+                <p class="text">Change Password</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link">
+                <i class="nav-icon sign-out-alt">
+                  <img src="images/icons/logout-icon.png" alt="logout-icon" class="icon-img" />
+                </i>
+                <p class="text">Logout</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+    <main class="content-wrapper">
+
+      <div class="winning-numbers-container">
+
+        <section class="winning-numbers-content">
+          <div class="left-content-container">
+            <div class="total-points">
+              <h2>Points: 8,000</h2>
+            </div>
+
+            <div class="table-bets-container">
+              <div class="winning-numbers">
+                <button id="winningNumBtn">
+                  <a href="winning-numbers.html">
+                    <h2 class="text">Winning Numbers</h2>
+                  </a>
+                </button>
+              </div>
+              <div class="table-responsive-v">
+                <table class="table-v table-bordered text-small">
+                  <thead class="table-bets-h">
+                    <tr>
+                      <th>DATE</th>
+                      <th>2 PM Draw</th>
+                      <th>5 PM Draw</th>
+                      <th>9 PM Draw</th>
+                      <th># Of Winners</th>
+                    </tr>
+                  </thead>
+                  <tbody class="live-bets">
+                    <tr>
+                      <td>May 20,2025</td>
+                      <td>22-14</td>
+                      <td>3-7</td>
+                      <td>7-1</td>
+                      <td>220</td>
+                    </tr>
+                    <tr>
+                      <td>May 19,2025</td>
+                      <td>2-3</td>
+                      <td>5-18</td>
+                      <td>31-2</td>
+                      <td>200</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="right-content-container">
+            <div class="projects-section">
+              <h1>Municipal of San Pascual</h1>
+              <h2>List Of Projects</h2>
+              <ul class="projects-list">
+                <li>Repair Of Barangay Hall</li>
+                <li>Food Feeding DepEd</li>
+                <li>Clean & Green Program</li>
+                <li>Housing Program for Indigents</li>
+                <li>Scholarship Program</li>
+              </ul>
+            </div>
+          
+           <div class="place-bet">
+                <button id="placeBetBtn">
+                  <a href="betting-station.html">
+                    <h2 class="text">ENTER TO PLACE YOUR BET</h2>
+                  </a>
+                </button>
+              </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <p class="footer-p">Copyright &copy; <span id="year"></span> 2D Lotto. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="scripts/header.js"></script>
+  <script src="scripts/sidebar.js"></script>
+  <script src="scripts/copyright.js"></script>
+  <script src="scripts/sidebar-toggle.js"></script>
+  <script src="scripts/dropdown.js"></script>
+</body>
+
+</html>

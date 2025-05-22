@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Lotto-Demo</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/betting-station.css">
+  <link rel="stylesheet" href="styles/bet.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo-container">
+        <button class="box-menu-btn" type="button" aria-label="Toggle Sidebar" onclick="onToggleSidebar()">
+          <img src="images/icons/bx-menu.svg" class="box-menu-icon" alt="Toggle Sidebar" />
+        </button>
+        <div class="box-menu-text">
+          <span>2D-Lotto</span>
+        </div>
+      </div>
+      <nav class="main-header">
+        <ul class="nav-item-header">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" onclick="toggleUserDropdown(event)">
+              <i class="nav-icon superadmin-icon">
+                <img src="images/icons/user-icon.png" class="user-icon" alt="User Icon" />
+              </i>
+              Batangas
+            </a>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <div class="dropdown-divider"></div>
+              <a href="/change-password" class="dropdown-item">
+                Change Password
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="/logout" class="dropdown-item">
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="wrapper">
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+    <div class="sidebar-container">
+
+      <aside class="main-asidebar">
+         <nav class="main-sidebar">
+          <ul class="nav-item-sidebar" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-header">PLAYER</li>
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon dashboard">
+                  <img src="images/icons/dashboard-icon.png" alt="dashboard-icon" class="icon-img" />
+                </i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="live-draw.html" class="nav-link">
+                <i class="nav-icon events">
+                  <img src="images/icons/event-icon.png" alt="event-icon" class="icon-img" />
+                </i>
+                <p>Live Draw</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="betting-station.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Betting-Station</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="winning-numbers.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Winning Numbers</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <i class="nav-icon wallet-icon">
+                  <img src="images/icons/wallet-icon.png" alt="wallet-icon" class="icon-img" />
+                </i>
+                <p class="text">Wallet-Logs</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="history.html" class="nav-link">
+                <i class="nav-icon events">
+                  <img src="images/icons/history.png" alt="History" class="icon-img" />
+                </i>
+                <p>History</p>
+              </a>
+            </li>
+            <li class="nav-header">Settings</li>
+            <li class="nav-item">
+              <a href="change-password.html" class="nav-link">
+                <i class="nav-icon changekey">
+                  <img src="images/icons/key-icon.png" alt="key-icon" class="icon-img" />
+                </i>
+                <p class="text">Change Password</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="logout.html" class="nav-link">
+                <i class="nav-icon sign-out-alt">
+                  <img src="images/icons/logout-icon.png" alt="logout-icon" class="icon-img" />
+                </i>
+                <p class="text">Logout</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+    <main class="content-wrapper">
+
+      <div class="betting-station-container">
+
+        <section class="betting-station-content">
+          <div class="total-points">
+            <h2>Points: 8,000</h2>
+          </div>
+          <div class="betting-station-content-container">
+            <div class="left-content-container">
+              <div class="place-bet">
+                <button id="placeBetBtnContainerAM">
+                   <a href="#">
+                    <h2 class="text">AM BET - 2PM Draw</h2>
+                  </a>
+                </button>
+                <div class="container" style="display: none;">
+                  <h2>Pick <span class="highlight">2</span> Combinations</h2>
+                  <div class="number-grid" id="numberGrid"></div>
+
+                  <div class="bet-type">
+                    <button id="straightBtn" class="active">STRAIGHT BET</button>
+                    <button id="rambleBtn">RAMBLE BET</button>
+                  </div>
+
+                  <div class="bet-amount">
+                    <label for="amountInput">Bet Amount (₱10 - ₱20,000) X ₱800 For Winner </label>
+                    <input type="number" id="amountInput" min="10" max="20000" value="10" />
+                  </div>
+
+                  <div class="ticket" id="ticket">
+                    <div>2D LOTTO</div>
+                    <strong id="pickedNumbers">-- --</strong>
+                    <div id="betTypeDisplay">STRAIGHT - ₱<span id="betAmount">10</span></div>
+                    <div id="timestamp"></div>
+                  </div>
+
+                  <button id="placeBetBtn">PLACE BET</button>
+
+                  <hr />
+
+                  <div class="my-tickets">
+                    <h3>My Tickets</h3>
+                    <ul id="ticketList"></ul>
+                    <div class="wallet">Total: ₱<span id="wallet">8000</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="middle-content-container">
+              <div class="place-bet">
+                <button id="placeBetBtnContainerPM">
+                  <a href="#">
+                    <h2 class="text">PM BET - 5PM Draw</h2>
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div class="right-content-container">
+
+              <div class="place-bet">
+                <button id="placeBetBtnContainerEVE">
+                  <a href="#">
+                    <h2 class="text">EVE BET - 9PM Draw</h2>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="player-bet-summary">Your Bet</div>
+          <div class="player-bet-details">
+            <div class="table-responsive-v">
+                <table class="table-v table-bordered text-small">
+                  <thead class="table-bets-h">
+                    <tr>
+                      <th>DATE</th>
+                      <th>AM DRAW</th>
+                      <th>Amount</th>
+                      <th>BET Type</th>
+                      <th>Potential Win</th>
+                    </tr>
+                  </thead>
+                  <tbody class="live-bets">
+                    <tr>
+                      <td>May 20,2025</td>
+                      <td>22-14</td>
+                      <td>₱ 20</td>
+                      <td>STRAIGHT</td>
+                      <td>₱ 16000</td>
+                    </tr>
+                    <tr>
+                      <td>May 19,2025</td>
+                      <td>2-3</td>
+                      <td>₱ 11</td>
+                      <td>STRAIGHT</td>
+                      <td>₱ 8100</td>
+                    </tr>
+                     <tr>
+                      <td>May 18,2025</td>
+                      <td>22-14</td>
+                      <td>₱ 30</td>
+                      <td>STRAIGHT</td>
+                      <td>₱ 24000</td>
+                    </tr>
+                      <tr>
+                      <td>May 17,2025</td>
+                      <td>2-3</td>
+                      <td>₱ 11</td>
+                      <td>STRAIGHT</td>
+                      <td>₱ 8100</td>
+                    </tr>
+                     <tr>
+                      <td>May 16,2025</td>
+                      <td>2-3</td>
+                      <td>₱ 11</td>
+                      <td>STRAIGHT</td>
+                      <td>₱ 8100</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <p class="footer-p">Copyright &copy; <span id="year"></span> 2D Lotto. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="scripts/header.js"></script>
+  <script src="scripts/sidebar.js"></script>
+  <script src="scripts/copyright.js"></script>
+  <script src="scripts/sidebar-toggle.js"></script>
+  <script src="scripts/dropdown.js"></script>
+  <script src="scripts/bet.js"></script>
+  <script>
+    document.getElementById('placeBetBtnContainerAM').addEventListener('click', function() {
+      var container = document.querySelector('.left-content-container .container');
+      if (container) {
+        container.style.display = container.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>

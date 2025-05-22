@@ -1,0 +1,124 @@
+.sidebar-container {
+  width: 250px; /* Default sidebar width */
+  background-color:  #343a40;
+  color: #adb5bd;
+  height: calc(100vh - 55px); /* Subtract header height */
+  overflow-y: auto;
+  position: fixed;
+  top: 49px; /* Push below the header */
+  left: 0; /* Ensure sidebar starts at the very left */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  z-index: 1001;
+  transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #495057 #343a40; /* Firefox */
+}
+
+/* Webkit browsers */
+.sidebar-container::-webkit-scrollbar {
+  width: 6px;
+  background: #343a40;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+  background: #495057;
+  border-radius: 4px;
+}
+
+.sidebar-container::-webkit-scrollbar-thumb:hover {
+  background: #626669;
+}
+
+.sidebar-container a {
+  text-decoration: none !important; /* Force removal of underline for all links in header */
+}
+
+.main-asidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-asidebar ul li {
+ padding: 0;
+}
+
+.main-asidebar ul li a {
+  color: #adb5bd; 
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduce gap between items further */
+  padding: 0; /* Remove padding to keep items closer */
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.main-asidebar ul li a:hover {
+  background-color: #495057; 
+  margin-top: 5px;
+}
+
+.main-asidebar ul li a.active {
+  background-color: #626669; 
+}
+
+.nav-item-sidebar .nav-link p {
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out;
+}
+.nav-header {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  color: #adb5bd; 
+}
+
+
+.icon-img {
+  width: 16px; /* Keep the image size fixed */
+  height: 16px; /* Keep the image size fixed */
+  vertical-align: middle;
+  margin-left: 30px;
+  transition: width 0.2s, height 0.2s;
+    filter: brightness(0) invert(1);
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+.sidebar-overlay.show {
+  display: block;
+}
+
+/* Mobile sidebar as drawer */
+@media (max-width: 768px) {
+  .sidebar-container {
+    left: -250px;
+    width: 250px;
+    transition: left 0.3s;
+    height: 100vh;
+    top: 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  }
+  .sidebar-container.open {
+    left: 0;
+    z-index: 1001;
+  }
+  .dashboard-container {
+    margin-left: 0 !important;
+  }
+  .wrapper.sidebar-collapsed .dashboard-container {
+    margin-left: 0 !important;
+  }
+}
+
+
+

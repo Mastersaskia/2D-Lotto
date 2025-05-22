@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid red
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.highlight {
+  color: red;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.number-grid button {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.number-grid button.selected {
+  background: red;
+  color: white;
+}
+
+.bet-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.bet-type button {
+  flex: 1;
+  padding: 10px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.bet-type button.active {
+  background: red;
+}
+
+.bet-amount {
+  margin: 15px 0;
+}
+
+.bet-amount input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.ticket {
+  background: #00bcd4;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 6px;
+  color: black;
+}
+
+.my-tickets h3 {
+  margin-bottom: 5px;
+}
+
+.my-tickets ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 0 10px;
+}
+
+.my-tickets li {
+  background: #333;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.wallet {
+  background: #444;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: right;
+}
+
+#placeBetBtn {
+  background: gold;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}

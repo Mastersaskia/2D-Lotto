@@ -1,0 +1,62 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  /*overflow: hidden;
+  /* Prevent overflow from child components */
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+  /* border: 2px solid red; */ /* Remove for production */
+}
+
+.wrapper .content-wrapper {
+  margin: 0;
+  padding: 0px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 0 auto;
+  min-height: calc(100vh - 55px - 55px); /* header + footer */
+  /* Ensures content fits between header and footer */
+  overflow-y: auto;
+}
+
+body, html {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+.dashboard-container,
+.live-draw-container,
+.betting-station-container,
+.winning-numbers-container,
+.wallet-container,
+.history-container,
+.event-container {
+  display: flex;
+  margin-left: 250px;
+  margin-top: 53px;
+  background-color: #ffffff;
+  color: #ffffff;
+  min-height: auto;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  transition: margin-left 0.3s ease-in-out;
+
+}
+
+
+
+@media (max-width: 768px) {
+  .dashboard-container,
+  .live-draw-container,
+  .betting-station-container,
+  .winning-numbers-container,
+  .wallet-container,
+  .history-container,
+  .event-container {
+    margin-left: 0 !important;
+  }
+}

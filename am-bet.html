@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2D Lotto</title>
+  <link rel="stylesheet" href="styles/bet.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Pick <span class="highlight">2</span> Combinations</h2>
+    <div class="number-grid" id="numberGrid"></div>
+
+    <div class="bet-type">
+      <button id="straightBtn" class="active">STRAIGHT BET</button>
+      <button id="rambleBtn">RAMBLE BET</button>
+    </div>
+
+    <div class="bet-amount">
+      <label for="amountInput">Bet Amount (₱10 - ₱20,000) X ₱800 For Winner </label>
+      <input type="number" id="amountInput" min="10" max="20000" value="10" />
+    </div>
+
+    <div class="ticket" id="ticket">
+      <div>2D LOTTO</div>
+      <strong id="pickedNumbers">-- --</strong>
+      <div id="betTypeDisplay">STRAIGHT - ₱<span id="betAmount">10</span></div>
+      <div id="timestamp"></div>
+    </div>
+
+    <button id="placeBetBtn">PLACE BET</button>
+
+    <hr />
+
+    <div class="my-tickets">
+      <h3>My Tickets</h3>
+      <ul id="ticketList"></ul>
+      <div class="wallet">Total: ₱<span id="wallet">8000</span></div>
+    </div>
+  </div>
+
+  <script src="scripts/bet.js"></script>
+</body>
+</html>

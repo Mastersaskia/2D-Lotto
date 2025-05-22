@@ -1,0 +1,12 @@
+footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  height: 55px; /* Match header height */
+  padding: 0 0; /* Remove vertical padding, handled by height and flex */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
