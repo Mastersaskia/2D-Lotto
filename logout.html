@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/logout.css">
 </head>
+
 <body>
   <header>
     <!-- ...existing code for header... -->
@@ -46,7 +48,6 @@
     <div class="sidebar-overlay" onclick="closeSidebar()"></div>
     <div class="sidebar-container">
       <aside class="main-asidebar">
-        <!-- ...existing sidebar code, copy from your other pages... -->
         <nav class="main-sidebar">
           <ul class="nav-item-sidebar" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-header">PLAYER</li>
@@ -58,14 +59,7 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="wallet.html" class="nav-link">
-                <i class="nav-icon wallet-icon">
-                  <img src="images/icons/wallet-icon.png" alt="wallet-icon" class="icon-img" />
-                </i>
-                <p class="text">Wallet-Logs</p>
-              </a>
-            </li>
+
             <li class="nav-item">
               <a href="live-draw.html" class="nav-link">
                 <i class="nav-icon events">
@@ -75,19 +69,37 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="betting-station.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Betting-Station</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="winning-numbers.html" class="nav-link">
+                <i class="nav-icon cogs">
+                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
+                </i>
+                <p class="text">Winning Numbers</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="wallet.html" class="nav-link">
+                <i class="nav-icon wallet-icon">
+                  <img src="images/icons/wallet-icon.png" alt="wallet-icon" class="icon-img" />
+                </i>
+                <p class="text">Wallet-Logs</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="history.html" class="nav-link">
                 <i class="nav-icon events">
                   <img src="images/icons/history.png" alt="History" class="icon-img" />
                 </i>
                 <p>History</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="settings.html" class="nav-link">
-                <i class="nav-icon cogs">
-                  <img src="images/icons/dice-roll.png" alt="dice-roll" class="icon-img" />
-                </i>
-                <p class="text">Winning Numbers</p>
               </a>
             </li>
             <li class="nav-header">Settings</li>
@@ -100,7 +112,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="logout.html" class="nav-link active">
+              <a href="logout.html" class="nav-link">
                 <i class="nav-icon sign-out-alt">
                   <img src="images/icons/logout-icon.png" alt="logout-icon" class="icon-img" />
                 </i>
@@ -109,6 +121,7 @@
             </li>
           </ul>
         </nav>
+
       </aside>
     </div>
     <main class="content-wrapper">
